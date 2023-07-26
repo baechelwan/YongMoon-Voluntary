@@ -40,9 +40,9 @@
   </body>
   <script>
     // querySelector() 안에 알맞은 값을 넣어주세요.
-    const clickCounter = document.querySelector("");
-    const countBtn = document.querySelector("");
-    const resetBtn = document.querySelector("");
+    const clickCounter = document.querySelector(".clickCounter");
+    const countBtn = document.querySelector(".countButton");
+    const resetBtn = document.querySelector(".resetButton");
     
     // 클릭한 횟수를 나타낼 변수에요.
     let counter = 0;
@@ -50,6 +50,8 @@
     // clickCounter를 클릭할 때마다 counter를 1씩 증가시키는 함수
     function countup() {
       // 함수를 구현해주세요.
+      counter += 1;
+      clickCounter.innerText = "Total clicks: " + counter;
     }
     // countBtn을 클릭하면 submit() 함수가 실행됩니다.
     countBtn.addEventListener("click", countup);
@@ -57,6 +59,8 @@
     // reset을 클릭하면 counter 값을 0으로 초기화시키는 함수
     function reset() {
       // 함수를 구현해주세요.
+      counter = 0;
+      clickCounter.innerText = "Total clicks: " + counter;
     }
     // resetBtn을 클릭하면 reset() 함수가 실행됩니다.
     resetBtn.addEventListener("click", reset);
