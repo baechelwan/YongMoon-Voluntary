@@ -75,13 +75,24 @@
     const input = document.querySelector(".inputN");
     const submitBtn = document.querySelector(".submitBtn");
 
-    function minmax(arr) {
+    function minmax(arr)
+    {
       let max = -Infinity;
       let min = Infinity;
 
       // 함수를 구현하세요!
-
-      
+      for(let num of arr)
+      {
+        if( num > max )
+        {
+          max = num;
+        }
+        if( num < min )
+        {
+          min = num;
+        }
+      }
+      return [min , max];
     }
 
     function submit() {
