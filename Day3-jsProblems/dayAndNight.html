@@ -46,12 +46,22 @@
     // 낮일 땐 해가 떠있고, 하늘이 파랗고(#00e1ff), 버튼에는 night라고 써져있습니다.
     // 밤일 땐 달이 떠있고, 하늘이 어둡고(#404040), 버튼에는 day라고 써져있습니다.
     function switchclick() {
-      if (state === "day") {
-        // 내용을 채워주세요!
-      } else {
-        // 내용을 채워주세요!
+      if (state === "day")
+      {
+        state = "night"
+        sphere.src = "moon.png"
+        sky.style.backgroundColor = "#404040"
+        switchBtn.innerText = "day"
+      }
+      else
+      {
+        state = "day"
+        sphere.src = "sun.png"
+        sky.style.backgroundColor = "#00e1ff"
+        switchBtn.innerText = "moon"
       }
       // 내용을 채워주세요!
+
       console.log(state);
     }
     // switchBtn을 클릭하면 switchclick() 함수가 실행됩니다.
