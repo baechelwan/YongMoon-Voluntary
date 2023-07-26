@@ -40,18 +40,20 @@
   </body>
   <script>
     // querySelector() 안에 알맞은 값을 넣어주세요.
-    const input = document.querySelector("");
-    const result = document.querySelector("");
+    const input = document.querySelector(".input");
+    const result = document.querySelector(".result");
 
-    function submit() {
+    function submit()
+    {
       // 입력된 값을 n에 저장
-      let n = 
+      let n = input.value;
       // 출력된 결과값 초기화
       result.innerHTML = "";
 
       // 함수를 구현해주세요!
-      for (let i = 0; i < n; i++) {
-        
+      for (let i = 0; i < n; i++)
+      {
+        result.innerHTML += "*".repeat(i) + "<br>";
       }
     }
     const submitBtn = document.querySelector(".submit");
