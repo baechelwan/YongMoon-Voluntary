@@ -58,10 +58,16 @@
           const input = document.querySelector(".inputN");
           const submitBtn = document.querySelector(".submitBtn");
 
-          function sumAll(n) {
-            // 1부터 n까지 수를 모두 더하는 함수를 구현하세요!
-            
-            
+          function sumAll(n)
+          {
+            var num = 0;
+
+            for(let i = 1; i <= n; i++)
+            {
+                num = ( num + i );
+            }
+
+            return num;
           }
 
           // submit 버튼을 누르면 실행될 함수에요.
