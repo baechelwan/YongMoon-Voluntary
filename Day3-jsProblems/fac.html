@@ -52,9 +52,20 @@
           const input = document.querySelector(".inputN");
           const submitBtn = document.querySelector(".submitBtn");
 
-          function factorial(n) {
+          function factorial(n)
+          {
             //1부터 n까지 수를 모두 곱하는 함수를 구현하세요!
             //n이 0이거나, 1일 경우 1을 반환하고, 나머지의 경우 팩토리얼 값을 반환합니다!
+            var num,i;
+
+              if(n = 0 || 1)
+              {
+                return 1;
+              }
+                else
+              {
+                return n * factorial( n - 1 );
+              }
             
           }
   
