@@ -42,8 +42,16 @@ function enterkey() {
         /*
          * 미로 사이즈가 짝수면 "Please enter an odd number." 라는 경고 메시지 생성
          * 미로 사이즈가 홀수면 미로의 사이즈를 타일의 갯수 변수에 저장, 게임 시작 함수 호출
-         */     
-    	
+         */
+    	if( sizeInput %2 == 0 )
+		{
+			alert ("Please enter an odd number.");
+		}
+		else if( sizeInput %2 == 1 )
+		{
+			ts = SizeInput;
+		}
+		initialize();
     }
 }
 
@@ -87,7 +95,8 @@ function makeWay(xx,yy){
 // 방향 키 이벤트
 function keyPush(evt){
 	
-	switch(evt.keyCode){ 
+	switch(evt.keyCode)
+	{ 
 
 		// 여기에 채워넣어 코드를 완성하세요!
 		/*
@@ -98,8 +107,23 @@ function keyPush(evt){
 		 * left : 37
 		 * up : 38
 		 * right : 39
-		 * down : 40
-		*/
+		 * down : 40  */
+		case 37:
+			xv = -1;
+			yv = 0;
+			break;
+		case 38:
+			yv = -1;
+			xv = 0;
+			break;
+		case 39:
+			yv = 0;
+			xv = 1;
+			break;
+		case 40:
+			yv = 1;
+			xv = 0;
+			break;
 	}
 
     
@@ -121,6 +145,11 @@ function keyPush(evt){
         /* 
          * 현재 위치 좌표와 도착 지점의 좌표를 비교하여 도착 지점에 도달했을 때, "You Win!" 이라는 경고 메시지 생성, 게임 리셋 함수 호출
          */
+		if( cx == tc - 1 && cy == tc - 2)
+		{
+			alert ("you win!")
+			initialize();
+		}
 	}
 		
 }
@@ -134,6 +163,14 @@ function randomMazeGenerator(){
 	    /*
 	     * 길이 막혔을 때, 안 막혔을 때 각각 함수 호출 (어떠한 문법, 어떠한 변수, 어떠한 함수를 써야할지 잘 생각해보세요!)
 	     */
+		if(stucked)
+		{
+			backtracking();
+		}
+		else
+		{
+			tracking();
+		}
     }
 }
 
@@ -145,6 +182,7 @@ function tracking(){
 	/* 
          * 0부터 3까지의 정수를 랜덤으로 생성하는 key 변수 생성 (Math.random 이용하기!, 한 줄 코드.)
          */
+		key=Math.floor(Math.random()*(3-0+1))+0;
 	
 	switch(key){
 	case 0: // left move
